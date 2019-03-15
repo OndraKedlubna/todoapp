@@ -1,0 +1,8 @@
+node_modules/
+.settings
+.classpath
+.idea
+.iml
+example-a**
+example-p**
+public/bundle.js
