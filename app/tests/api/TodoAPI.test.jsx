@@ -52,15 +52,15 @@ describe('TodoAPI', () => {
     describe('filterTodos', ()=> {
         var todos = [{
             id: 1,
-            test: 'text here',
+            text: 'text here',
             completed: true
         }, {
             id: 2,
-            test: 'other text',
+            text: 'other text',
             completed: false
         } , {
             id: 3,
-            test: 'text here',
+            text: 'text here',
             completed: true
         }];
 
@@ -78,6 +78,16 @@ describe('TodoAPI', () => {
             var filteredTodos = TodoAPI.filterTodos(todos, true, '');
             expect(filteredTodos.length).toBe(3);
             expect(filteredTodos[0].completed).toBe(false);
+        });
+
+        it('should filter todo by text', ()=>{
+            var filteredTodos = TodoAPI.filterTodos(todos, true, 'HERE');
+            expect(filteredTodos.length).toBe(2);
+        });
+
+        it('should return all with empty text', ()=>{
+            var filteredTodos = TodoAPI.filterTodos(todos, true, '');
+            expect(filteredTodos.length).toBe(3);
         });
     });
 });
