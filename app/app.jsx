@@ -13,7 +13,6 @@ require('style!css!sass!applicationStyles');
 
 ReactDOM.render(
     <div>
-        <p>boiler</p>
         <Todoapp/>
     </div>,
     document.getElementById('app')
